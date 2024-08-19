@@ -4,6 +4,61 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: blue;
+#caja-grande{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+#caja-segunda{
+
+    background-color:  #de90ff;
+    padding: 100px;
+    border-radius: 20px;
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+    font-family: "Questrial", sans-serif;
+       font-weight: 600;
+       font-style: normal;
+       color: black;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+   padding-bottom: 20px;
+    font-family: "Questrial", sans-serif;
+       font-weight: 500;
+}
+
+button{
+
+    background-color: #9241fc;
+    border: #9241fc;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 12px;
+
+}
+
+button:hover{
+
+    background-color: #7b20f3;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: "Questrial", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#botones{
+    display: flex;
+    justify-content: center;
 }

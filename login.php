@@ -7,17 +7,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT id, nombre, password FROM usuarios WHERE email='$email'";
-    $result = $conn->query($sql);
+    // Consulta para verificar el email en la base de datos
+    $sql = "SELECT id, nombre, password FROM usuarios WHERE email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             $_SESSION['userid'] = $row['id'];
             $_SESSION['nombre'] = $row['nombre'];
-            
-            // Redirigir a index.html
-            header("Location: index.html");
+
+            // Verificar si el email coincide con el del administrador
+            if ($email === "pruebapagina560@gmail.com") {
+                header("Location: index.php");
+            } else {
+                header("Location: index.html ");
+            }
             exit(); // Asegúrate de que el script termine aquí para evitar continuar con la ejecución.
         } else {
             echo "Contraseña incorrecta.";
@@ -26,11 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "No se encontró una cuenta con ese email.";
     }
 
+    $stmt->close();
     $conn->close();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
