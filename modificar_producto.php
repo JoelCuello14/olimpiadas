@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="modificar.css">
+</head>
+<body>
 <?php
 include 'db.php';
 
@@ -23,12 +32,24 @@ $sql = "SELECT * FROM productos WHERE id=$id";
 $result = $conn->query($sql);
 $product = $result->fetch_assoc();
 ?>
-
+<div id=caja-grande>
+    <div id=caja-segunda>
 <form method="post" action="modificar_producto.php">
     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-    Nombre: <input type="text" name="nombre" value="<?php echo $product['nombre']; ?>" required><br>
-    Descripción: <textarea name="descripcion"><?php echo $product['descripcion']; ?></textarea><br>
-    Precio: <input type="text" name="precio" value="<?php echo $product['precio']; ?>" required><br>
-    Imagen: <input type="text" name="imagen" value="<?php echo $product['imagen']; ?>"><br>
-    <input type="submit" value="Actualizar Producto">
+    <p>Nombre: </p><input type="text" name="nombre" value="<?php echo $product['nombre']; ?>" required><br>
+   <p> Descripción:</p> <textarea name="descripcion"><?php echo $product['descripcion']; ?></textarea><br>
+    <p>Precio:</p> <input type="text" name="precio" value="<?php echo $product['precio']; ?>" required><br>
+   <p> Imagen: </p><input type="text" name="imagen" value="<?php echo $product['imagen']; ?>"><br>
+
+
+   <div class=botones>
+    <input type="submit" value="Modificar Producto" class=boton>
+</div>
+
+<div class=botones>
+<a href="index.php" class=boton>Volver</a>
 </form>
+</div>
+</div>
+</body>
+</html>

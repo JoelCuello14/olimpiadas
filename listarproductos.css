@@ -1,0 +1,24 @@
+#grande{
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+th{
+    font-family: "Questrial", sans-serif;
+       font-weight: 500;
+       color: white;
+}
+
+td{
+    font-family: "Questrial", sans-serif;
+       font-weight: 500;
+       color: white;
+}
+
+table{
+    background-color:  #de90ff;
+    border: #de90ff;
+    padding: 20px;
+    border-radius: 20px;
+}
