@@ -161,7 +161,7 @@ const showHTML = () => {
 		const containerProduct = document.createElement('div');
 		containerProduct.classList.add('cart-product');
 
-		containerProduct.innerHTML = `
+		containerProduct.innerHTML =`
             <div class="info-cart-product">
                 <span class="cantidad-producto-carrito">${product.quantity}</span>
                 <p class="titulo-producto-carrito">${product.title}</p>
@@ -194,3 +194,12 @@ const showHTML = () => {
 	countProducts.innerText = totalOfProducts;
 	
 };
+
+const btnClearCart = document.querySelector('#clear-cart');
+
+btnClearCart.addEventListener('click', () => {
+    // Vacía el arreglo de productos
+    allProducts = [];
+    // Actualiza el carrito para reflejar los cambios
+    showHTML();
+});

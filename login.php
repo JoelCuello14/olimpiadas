@@ -22,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verificar si el email coincide con el del administrador
             if ($email === "pruebapagina560@gmail.com") {
-                header("Location: index.php");
+                header("Location: paneldeadmin.php");
             } else {
-                header("Location: index.html ");
+                header("Location: principal.php ");
             }
             exit(); // Asegúrate de que el script termine aquí para evitar continuar con la ejecución.
         } else {

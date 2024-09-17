@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div id=caja-grande>
         <div id=caja-segunda>
-<form method="post" action="crear_producto.php">
+<form method="post" action="crear_producto.php"  enctype="multipart/form-data">
    <p>Nombre:</p>  <input type="text" name="nombre" required><br>
     <p>Descripción: </p><textarea name="descripcion"></textarea><br>
    <p> Precio: </p><input type="text" name="precio" required><br>
-    <p>Imagen:</p> <input type="text" name="imagen"><br>
+    <p>Imagen:</p> <input type="file" name="imagen"><br>
 <div class=botones>
     <input type="submit" value="Crear Producto" class=boton>
 </div>

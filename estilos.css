@@ -6,7 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: #333;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -516,6 +518,11 @@ padding: 40px;
     font-style: normal;
     
 }
+.iniciar{
+    height: 6px;
+    width: 6px;
+}
+
 /* Media Query para dispositivos móviles */
 @media only screen and (max-width: 768px) {
     #madre{
@@ -919,12 +926,24 @@ padding: 40px;
         padding: 20px;
         font-size: 20px;
     } 
-    #iniciar{
-    width: 20px ;
-    height: 20px; 
-    } 
+
     .nombre-producto{
         font-size: 10px;
     }
-  
+    .iniciar{
+        height: 1px;
+        width: 12px;
+    }
 }
+.btn-clear-cart{
+    background-color: #da82ff;
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 4px;
+    }
+    
+    .btn-clear-cart:hover{
+        cursor: pointer;
+        background-color: #da30a7;
+    }
